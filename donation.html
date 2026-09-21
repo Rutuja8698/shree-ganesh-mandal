@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+
+<html lang="mr">
+
+<head>
+
+```
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>देणगी | श्री गणेश मित्र मंडळ</title>
+
+<!-- Google Fonts -->
+<link rel="preconnect"
+      href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<!-- Main CSS -->
+<link rel="stylesheet"
+      href="style.css">
+
+<!-- Razorpay Checkout -->
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+```
+
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+```
+<div class="nav-container">
+
+    <a href="index.html" class="logo">
+        <i class="fa-solid fa-om"></i>
+        <span>श्री गणेश मित्र मंडळ</span>
+    </a>
+
+    <nav class="nav-menu">
+
+        <a href="index.html">मुख्यपृष्ठ</a>
+
+        <a href="index.html#about">मंडळाची माहिती</a>
+
+        <a href="index.html#programs">कार्यक्रम</a>
+
+        <a href="index.html#gallery">फोटो</a>
+
+        <a href="donation.html" class="active">देणगी</a>
+
+        <a href="index.html#contact">संपर्क</a>
+
+    </nav>
+
+    <button class="menu-toggle"
+            id="menuToggle">
+
+        <i class="fa-solid fa-bars"></i>
+
+    </button>
+
+</div>
+```
+
+</header>
+
+<!-- ================= DONATION HERO ================= -->
+
+<section class="donation-hero">
+
+```
+<div class="donation-hero-overlay"></div>
+
+<div class="donation-hero-content">
+
+    <div class="donation-symbol">
+        ॥ श्री गणेशाय नमः ॥
+    </div>
+
+    <h1>
+        देणगी <span>अर्पण करा</span>
+    </h1>
+
+    <p>
+        आपल्या सहकार्यामुळे भक्ती, संस्कृती आणि
+        सामाजिक उपक्रमांना अधिक बळ मिळते.
+    </p>
+
+</div>
+```
+
+</section>
+
+<!-- ================= DONATION SECTION ================= -->
+
+<section class="donation-page section">
+
+```
+<div class="container">
+
+    <div class="section-heading">
+
+        <span>🙏 आपले सहकार्य</span>
+
+        <h2>गणेशोत्सवासाठी देणगी</h2>
+
+        <p>
+            श्री गणेश मित्र मंडळाच्या गणेशोत्सवातील
+            विविध धार्मिक, सांस्कृतिक आणि सामाजिक
+            उपक्रमांसाठी आपण आपल्या इच्छेनुसार
+            देणगी देऊ शकता.
+        </p>
+
+    </div>
+
+
+
+    <div class="donation-main-grid">
+
+
+        <!-- ================= LEFT INFO ================= -->
+
+        <div class="donation-info-card">
+
+            <div class="donation-card-icon">
+
+                <i class="fa-solid fa-hand-holding-heart"></i>
+
+            </div>
+
+            <h3>
+                आपल्या योगदानाचे महत्त्व
+            </h3>
+
+            <p>
+                आपल्या छोट्या-छोट्या योगदानातून
+                गणेशोत्सव अधिक सुंदर आणि
+                उत्साहपूर्ण करण्यास मदत होते.
+            </p>
+
+
+            <div class="donation-points">
+
+                <div class="donation-point">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <span>
+                        गणेशोत्सवातील धार्मिक कार्यक्रम
+                    </span>
+
+                </div>
+
+
+                <div class="donation-point">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <span>
+                        सांस्कृतिक कार्यक्रम
+                    </span>
+
+                </div>
+
+
+                <div class="donation-point">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <span>
+                        सामाजिक उपक्रम
+                    </span>
+
+                </div>
+
+
+                <div class="donation-point">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <span>
+                        मंडळाच्या इतर उपक्रमांसाठी
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="donation-thanks">
+
+                🙏 आपल्या सहकार्याबद्दल मनःपूर्वक धन्यवाद!
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ================= RAZORPAY CARD ================= -->
+
+        <div class="donation-payment-card">
+
+            <div class="payment-header">
+
+                <i class="fa-solid fa-credit-card"></i>
+
+                <h3>
+                    ऑनलाइन देणगी
+                </h3>
+
+                <p>
+                    खाली माहिती भरून सुरक्षितपणे
+                    ऑनलाइन देणगी अर्पण करा.
+                </p>
+
+            </div>
+
+
+            <!-- NAME -->
+
+            <div class="donation-form-group">
+
+                <label for="donorName">
+                    पूर्ण नाव
+                </label>
+
+                <input type="text"
+                       id="donorName"
+                       placeholder="आपले पूर्ण नाव">
+
+            </div>
+
+
+            <!-- MOBILE -->
+
+            <div class="donation-form-group">
+
+                <label for="donorMobile">
+                    मोबाईल नंबर
+                </label>
+
+                <input type="tel"
+                       id="donorMobile"
+                       maxlength="10"
+                       placeholder="10 अंकी मोबाईल नंबर">
+
+            </div>
+
+
+            <!-- AMOUNT -->
+
+            <div class="donation-form-group">
+
+                <label for="donationAmount">
+                    देणगी रक्कम (₹)
+                </label>
+
+                <input type="number"
+                       id="donationAmount"
+                       min="1"
+                       placeholder="उदा. 100">
+
+            </div>
+
+
+            <!-- QUICK AMOUNTS -->
+
+            <div class="quick-amounts">
+
+                <button type="button"
+                        onclick="setAmount(101)">
+                    ₹101
+                </button>
+
+                <button type="button"
+                        onclick="setAmount(501)">
+                    ₹501
+                </button>
+
+                <button type="button"
+                        onclick="setAmount(1001)">
+                    ₹1001
+                </button>
+
+                <button type="button"
+                        onclick="setAmount(2100)">
+                    ₹2100
+                </button>
+
+            </div>
+
+
+            <!-- PAY BUTTON -->
+
+            <button type="button"
+                    class="btn donation-pay-btn"
+                    onclick="startPayment()">
+
+                <i class="fa-solid fa-heart"></i>
+
+                देणगी अर्पण करा
+
+            </button>
+
+
+            <p class="payment-note">
+
+                🔒 Razorpay Test Mode द्वारे Payment
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= UPI QR SECTION ================= -->
+
+    <div class="donation-main-grid qr-section">
+
+
+        <div class="donation-payment-card">
+
+            <div class="payment-header">
+
+                <i class="fa-solid fa-qrcode"></i>
+
+                <h3>
+                    UPI द्वारे देणगी
+                </h3>
+
+                <p>
+                    QR Code स्कॅन करून देणगी अर्पण करा.
+                </p>
+
+            </div>
+
+
+            <div class="qr-code-box">
+
+                <img src="images/donation-qr.png"
+                     alt="देणगीसाठी UPI QR Code">
+
+            </div>
+
+
+            <p class="scan-text">
+                📱 QR Code स्कॅन करा
+            </p>
+
+
+            <div class="upi-section">
+
+                <span>
+                    UPI ID
+                </span>
+
+                <div class="upi-box">
+
+                    <strong id="upiId">
+                        satputeom109-3@oksbi
+                    </strong>
+
+                    <button type="button"
+                            onclick="copyUPI()"
+                            title="UPI ID कॉपी करा">
+
+                        <i class="fa-regular fa-copy"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="donation-info-card">
+
+            <div class="donation-card-icon">
+
+                <i class="fa-solid fa-mobile-screen-button"></i>
+
+            </div>
+
+            <h3>
+                UPI देणगीसाठी सूचना
+            </h3>
+
+            <p>
+                QR Code द्वारे देणगी दिल्यानंतर
+                व्यवहाराचा screenshot मंडळाला
+                WhatsApp वर पाठवू शकता.
+            </p>
+
+            <a href="https://wa.me/918530346976"
+               target="_blank"
+               class="donation-whatsapp">
+
+                <i class="fa-brands fa-whatsapp"></i>
+
+                WhatsApp वर स्क्रीनशॉट पाठवा
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- ================= PARTICIPATION ================= -->
+
+<section class="participation-section">
+
+```
+<div class="container">
+
+    <div class="participation-box">
+
+        <div>
+
+            <span>
+                🤝 मंडळाच्या उपक्रमात सहभागी व्हा
+            </span>
+
+            <h2>
+                स्वयंसेवक म्हणून सहभागी व्हा
+            </h2>
+
+            <p>
+                गणेशोत्सवातील विविध धार्मिक,
+                सांस्कृतिक आणि सामाजिक उपक्रमांमध्ये
+                सहभागी होण्यासाठी आमच्याशी संपर्क साधा.
+            </p>
+
+        </div>
+
+
+        <a href="https://wa.me/918530346976"
+           target="_blank"
+           class="btn participation-btn">
+
+            <i class="fa-brands fa-whatsapp"></i>
+
+            WhatsApp वर संपर्क करा
+
+        </a>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+```
+<div class="container">
+
+    <div class="footer-content">
+
+        <div>
+
+            <h3>
+                श्री गणेश मित्र मंडळ
+            </h3>
+
+            <p>
+                रेठरे बुद्रुक,<br>
+                ता. कराड, जि. सातारा - 415108
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="index.html">मुख्यपृष्ठ</a>
+
+            <a href="index.html#programs">कार्यक्रम</a>
+
+            <a href="index.html#gallery">फोटो</a>
+
+            <a href="donation.html">देणगी</a>
+
+            <a href="index.html#contact">संपर्क</a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 श्री गणेश मित्र मंडळ.
+            सर्व हक्क राखीव.
+        </p>
+
+    </div>
+
+</div>
+```
+
+</footer>
+
+<!-- ================= SCRIPT ================= -->
+
+<script>
+
+
+/* ========================================
+   Backend URL
+======================================== */
+
+const API_URL = "http://localhost:5000";
+
+
+/* ========================================
+   Quick Amount
+======================================== */
+
+function setAmount(amount) {
+
+    document.getElementById("donationAmount").value = amount;
+
+}
+
+
+/* ========================================
+   Start Razorpay Payment
+======================================== */
+
+async function startPayment() {
+
+    const name =
+        document.getElementById("donorName").value.trim();
+
+    const mobile =
+        document.getElementById("donorMobile").value.trim();
+
+    const amount =
+        Number(document.getElementById("donationAmount").value);
+
+
+    /* Validation */
+
+    if (!name) {
+
+        alert("कृपया आपले पूर्ण नाव टाका.");
+        return;
+
+    }
+
+
+    if (!/^[0-9]{10}$/.test(mobile)) {
+
+        alert("कृपया योग्य 10 अंकी मोबाईल नंबर टाका.");
+        return;
+
+    }
+
+
+    if (!amount || amount <= 0) {
+
+        alert("कृपया योग्य देणगी रक्कम टाका.");
+        return;
+
+    }
+
+
+    try {
+
+
+        /* ===============================
+           Create Razorpay Order
+        =============================== */
+
+        const response =
+            await fetch(`${API_URL}/api/create-order`, {
+
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify({
+                    name: name,
+                    mobile: mobile,
+                    amount: amount
+                })
+
+            });
+
+
+        const data = await response.json();
+
+
+        if (!data.success) {
+
+            alert(
+                data.message ||
+                "Order तयार करताना समस्या आली."
+            );
+
+            return;
+
+        }
+
+
+        /* ===============================
+           Razorpay Checkout
+        =============================== */
+
+        const options = {
+
+            key: "rzp_test_TcGhgDHjatDGEz",
+
+            amount: data.order.amount,
+
+            currency: "INR",
+
+            name: "श्री गणेश मित्र मंडळ",
+
+            description: "गणेशोत्सव देणगी",
+
+            order_id: data.order.id,
+
+
+            prefill: {
+
+                name: name,
+
+                contact: mobile
+
+            },
+
+
+            theme: {
+
+                color: "#f59e0b"
+
+            },
+
+
+            handler: async function (paymentResponse) {
+
+    try {
+
+        console.log(
+            "Payment Response:",
+            paymentResponse
+        );
+
+
+        // Verify payment with backend
+
+        const verifyResponse =
+            await fetch(
+                `${API_URL}/api/verify-payment`,
+                {
+
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+
+                    body: JSON.stringify({
+    name: name,
+    mobile: mobile,
+
+    razorpay_order_id:
+        paymentResponse.razorpay_order_id,
+
+    razorpay_payment_id:
+        paymentResponse.razorpay_payment_id,
+
+    razorpay_signature:
+        paymentResponse.razorpay_signature
+})
+
+                }
+            );
+
+
+        const verifyData =
+            await verifyResponse.json();
+
+
+        if (verifyData.success) {
+
+            alert(
+                "🙏 देणगीबद्दल मनःपूर्वक धन्यवाद!\n\n" +
+                "Payment यशस्वी झाला आहे.\n\n" +
+                "Payment ID: " +
+                paymentResponse.razorpay_payment_id
+            );
+
+        } else {
+
+            alert(
+                "❌ Payment verification failed.\n\n" +
+                verifyData.message
+            );
+
+        }
+
+
+    } catch (error) {
+
+        console.error(
+            "Verification Error:",
+            error
+        );
+
+        alert(
+            "❌ Payment झाले आहे पण verification मध्ये समस्या आली."
+        );
+
+    }
+
+},
+
+
+            modal: {
+
+                ondismiss: function () {
+
+                    console.log(
+                        "Razorpay Checkout बंद केले."
+                    );
+
+                }
+
+            }
+
+        };
+
+
+        const razorpay =
+            new Razorpay(options);
+
+
+        razorpay.on("payment.failed", function(response) {
+
+            console.error(
+                "Payment Failed:",
+                response.error
+            );
+
+            alert(
+                "❌ Payment अयशस्वी झाले.\n\n" +
+                "कृपया पुन्हा प्रयत्न करा."
+            );
+
+        });
+
+
+        razorpay.open();
+
+
+    } catch (error) {
+
+        console.error("Payment Error:", error);
+
+        alert(
+            "❌ Server शी connection झाले नाही.\n\n" +
+            "कृपया backend server चालू आहे का ते तपासा."
+        );
+
+    }
+
+}
+
+
+/* ========================================
+   Copy UPI
+======================================== */
+
+function copyUPI() {
+
+    const upi =
+        document.getElementById("upiId").innerText;
+
+    navigator.clipboard.writeText(upi).then(function () {
+
+        alert("UPI ID कॉपी झाली!");
+
+    });
+
+}
+
+
+/* ========================================
+   Mobile Menu
+======================================== */
+
+const menuToggle =
+    document.getElementById("menuToggle");
+
+const navMenu =
+    document.querySelector(".nav-menu");
+
+
+menuToggle.addEventListener("click", function () {
+
+    navMenu.classList.toggle("active");
+
+});
+
+
+/* Close menu */
+
+document.querySelectorAll(".nav-menu a").forEach(function(link) {
+
+    link.addEventListener("click", function() {
+
+        navMenu.classList.remove("active");
+
+    });
+
+});
+
+
+</script>
+
+</body>
+
+</html>

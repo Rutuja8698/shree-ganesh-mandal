@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+<html lang="mr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard | श्री गणेश मित्र मंडळ</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            margin: 0;
+
+            font-family:
+                "Noto Sans Devanagari",
+                sans-serif;
+
+            background: #f5f7fb;
+
+            color: #222;
+
+        }
+
+
+        button,
+        input {
+
+            font-family: inherit;
+
+        }
+
+
+        /* ================= LOGIN ================= */
+
+        #loginPage {
+
+            min-height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff4df,
+                    #f5f7fb
+                );
+
+        }
+
+
+        .login-card {
+
+            width: 100%;
+
+            max-width: 420px;
+
+            background: white;
+
+            padding: 35px;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 15px 40px rgba(0,0,0,0.10);
+
+        }
+
+
+        .login-logo {
+
+            width: 70px;
+
+            height: 70px;
+
+            margin: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #f59e0b;
+
+            color: white;
+
+            font-size: 32px;
+
+            font-weight: 800;
+
+        }
+
+
+        .login-card h1 {
+
+            text-align: center;
+
+            margin: 18px 0 5px;
+
+            font-size: 25px;
+
+        }
+
+
+        .login-card p {
+
+            text-align: center;
+
+            color: #777;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .form-group {
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .form-group label {
+
+            display: block;
+
+            margin-bottom: 7px;
+
+            font-weight: 600;
+
+        }
+
+
+        .form-group input {
+
+            width: 100%;
+
+            padding: 13px 14px;
+
+            border: 1px solid #ddd;
+
+            border-radius: 10px;
+
+            font-size: 15px;
+
+            outline: none;
+
+        }
+
+
+        .form-group input:focus {
+
+            border-color: #f59e0b;
+
+        }
+
+
+        .login-btn {
+
+            width: 100%;
+
+            border: none;
+
+            padding: 14px;
+
+            border-radius: 10px;
+
+            background: #f59e0b;
+
+            color: white;
+
+            font-size: 16px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+        }
+
+
+        .login-btn:hover {
+
+            background: #d97706;
+
+        }
+
+
+        .login-error {
+
+            display: none;
+
+            margin-top: 15px;
+
+            padding: 10px;
+
+            border-radius: 8px;
+
+            background: #fee2e2;
+
+            color: #b91c1c;
+
+            text-align: center;
+
+        }
+
+
+        /* ================= DASHBOARD ================= */
+
+        #dashboardPage {
+
+            display: none;
+
+            min-height: 100vh;
+
+        }
+
+
+        .topbar {
+
+            background: white;
+
+            border-bottom: 1px solid #eee;
+
+            padding: 15px 25px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 15px;
+
+        }
+
+
+        .brand {
+
+            font-weight: 800;
+
+            font-size: 20px;
+
+        }
+
+
+        .brand span {
+
+            color: #f59e0b;
+
+        }
+
+
+        .logout-btn {
+
+            border: none;
+
+            background: #fee2e2;
+
+            color: #b91c1c;
+
+            padding: 9px 15px;
+
+            border-radius: 8px;
+
+            cursor: pointer;
+
+            font-weight: 600;
+
+        }
+
+
+        .dashboard-container {
+
+            max-width: 1200px;
+
+            margin: auto;
+
+            padding: 30px 20px;
+
+        }
+
+
+        .dashboard-title {
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .dashboard-title h1 {
+
+            margin: 0 0 5px;
+
+            font-size: 30px;
+
+        }
+
+
+        .dashboard-title p {
+
+            margin: 0;
+
+            color: #777;
+
+        }
+
+
+        /* ================= STATS ================= */
+
+        .stats-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 18px;
+
+            margin-bottom: 30px;
+
+        }
+
+
+        .stat-card {
+
+            background: white;
+
+            border-radius: 16px;
+
+            padding: 22px;
+
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.05);
+
+        }
+
+
+        .stat-title {
+
+            color: #777;
+
+            font-size: 14px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .stat-value {
+
+            font-size: 27px;
+
+            font-weight: 800;
+
+        }
+
+
+        /* ================= TRANSACTIONS ================= */
+
+        .transactions-card {
+
+            background: white;
+
+            border-radius: 16px;
+
+            padding: 20px;
+
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.05);
+
+        }
+
+
+        .transaction-header {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 15px;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .transaction-header h2 {
+
+            margin: 0;
+
+            font-size: 21px;
+
+        }
+
+
+        #searchBox {
+
+            padding: 10px 13px;
+
+            border: 1px solid #ddd;
+
+            border-radius: 8px;
+
+            outline: none;
+
+            min-width: 240px;
+
+        }
+
+
+        .table-wrapper {
+
+            overflow-x: auto;
+
+        }
+
+
+        table {
+
+            width: 100%;
+
+            border-collapse: collapse;
+
+            min-width: 850px;
+
+        }
+
+
+        th {
+
+            background: #f8f8f8;
+
+            text-align: left;
+
+            padding: 13px;
+
+            font-size: 14px;
+
+        }
+
+
+        td {
+
+            padding: 13px;
+
+            border-bottom: 1px solid #eee;
+
+            font-size: 14px;
+
+        }
+
+
+        .status {
+
+            display: inline-block;
+
+            padding: 5px 9px;
+
+            border-radius: 20px;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+        }
+
+
+        .success {
+
+            background: #dcfce7;
+
+            color: #166534;
+
+        }
+
+
+        .pending {
+
+            background: #fef3c7;
+
+            color: #92400e;
+
+        }
+
+
+        .failed {
+
+            background: #fee2e2;
+
+            color: #991b1b;
+
+        }
+
+
+        .refresh-btn {
+
+            border: none;
+
+            background: #111827;
+
+            color: white;
+
+            padding: 9px 14px;
+
+            border-radius: 8px;
+
+            cursor: pointer;
+
+        }
+
+
+        .empty {
+
+            text-align: center;
+
+            padding: 30px;
+
+            color: #777;
+
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 900px) {
+
+            .stats-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .topbar {
+
+                padding: 13px 15px;
+
+            }
+
+
+            .brand {
+
+                font-size: 16px;
+
+            }
+
+
+            .dashboard-container {
+
+                padding: 20px 12px;
+
+            }
+
+
+            .dashboard-title h1 {
+
+                font-size: 24px;
+
+            }
+
+
+            .stats-grid {
+
+                grid-template-columns: 1fr 1fr;
+
+                gap: 10px;
+
+            }
+
+
+            .stat-card {
+
+                padding: 15px;
+
+            }
+
+
+            .stat-value {
+
+                font-size: 21px;
+
+            }
+
+
+            .transaction-header {
+
+                align-items: stretch;
+
+                flex-direction: column;
+
+            }
+
+
+            #searchBox {
+
+                min-width: 0;
+
+                width: 100%;
+
+            }
+
+
+            .login-card {
+
+                padding: 25px 20px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= LOGIN PAGE ================= -->
+
+<div id="loginPage">
+
+    <div class="login-card">
+
+        <div class="login-logo">
+            ॐ
+        </div>
+
+        <h1>
+            Admin Login
+        </h1>
+
+        <p>
+            श्री गणेश मित्र मंडळ
+        </p>
+
+
+        <form id="loginForm">
+
+            <div class="form-group">
+
+                <label>
+                    Username
+                </label>
+
+                <input
+                    type="text"
+                    id="username"
+                    placeholder="Admin Username"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Admin Password"
+                    required>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="login-btn">
+
+                Login
+
+            </button>
+
+
+            <div
+                id="loginError"
+                class="login-error">
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+<!-- ================= DASHBOARD ================= -->
+
+<div id="dashboardPage">
+
+
+    <!-- TOP BAR -->
+
+    <header class="topbar">
+
+        <div class="brand">
+
+            श्री गणेश
+            <span>मित्र मंडळ</span>
+
+        </div>
+
+
+        <button
+            class="logout-btn"
+            onclick="logout()">
+
+            Logout
+
+        </button>
+
+    </header>
+
+
+
+    <main class="dashboard-container">
+
+
+        <!-- TITLE -->
+
+        <div class="dashboard-title">
+
+            <h1>
+                Donation Dashboard
+            </h1>
+
+            <p>
+                देणगी व्यवहारांची माहिती
+            </p>
+
+        </div>
+
+
+
+        <!-- STATS -->
+
+        <div class="stats-grid">
+
+
+            <div class="stat-card">
+
+                <div class="stat-title">
+                    एकूण देणगी
+                </div>
+
+                <div
+                    class="stat-value"
+                    id="totalAmount">
+
+                    ₹0
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-title">
+                    Successful Payments
+                </div>
+
+                <div
+                    class="stat-value"
+                    id="successCount">
+
+                    0
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-title">
+                    Pending Payments
+                </div>
+
+                <div
+                    class="stat-value"
+                    id="pendingCount">
+
+                    0
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-title">
+                    Failed Payments
+                </div>
+
+                <div
+                    class="stat-value"
+                    id="failedCount">
+
+                    0
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- TRANSACTIONS -->
+
+        <div class="transactions-card">
+
+
+            <div class="transaction-header">
+
+                <h2>
+                    देणगी व्यवहार
+                </h2>
+
+
+                <input
+                    type="text"
+                    id="searchBox"
+                    placeholder="नाव / मोबाईल शोधा">
+
+
+                <button
+                    class="refresh-btn"
+                    onclick="loadDashboard()">
+
+                    Refresh
+
+                </button>
+
+            </div>
+
+
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>नाव</th>
+
+                            <th>मोबाईल</th>
+
+                            <th>रक्कम</th>
+
+                            <th>Payment ID</th>
+
+                            <th>Status</th>
+
+                            <th>Date</th>
+
+                            <th>Action</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="transactionBody">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+
+<script>
+
+
+// ========================================
+// API
+// ========================================
+
+const API_URL =
+    "http://localhost:5000";
+
+
+// ========================================
+// LOGIN
+// ========================================
+
+document
+    .getElementById("loginForm")
+    .addEventListener(
+        "submit",
+        async function(event) {
+
+            event.preventDefault();
+
+
+            const username =
+                document
+                    .getElementById("username")
+                    .value
+                    .trim();
+
+
+            const password =
+                document
+                    .getElementById("password")
+                    .value;
+
+
+            const errorBox =
+                document
+                    .getElementById("loginError");
+
+
+            try {
+
+                const response =
+                    await fetch(
+                        `${API_URL}/api/admin/login`,
+                        {
+
+                            method: "POST",
+
+                            headers: {
+
+                                "Content-Type":
+                                    "application/json"
+
+                            },
+
+                            body: JSON.stringify({
+
+                                username:
+                                    username,
+
+                                password:
+                                    password
+
+                            })
+
+                        }
+                    );
+
+
+                const data =
+                    await response.json();
+
+
+                if (!data.success) {
+
+                    errorBox.style.display =
+                        "block";
+
+                    errorBox.textContent =
+                        data.message;
+
+                    return;
+
+                }
+
+
+                localStorage.setItem(
+                    "adminToken",
+                    data.token
+                );
+
+
+                showDashboard();
+
+                loadDashboard();
+
+
+            } catch (error) {
+
+                errorBox.style.display =
+                    "block";
+
+                errorBox.textContent =
+                    "Backend server चालू आहे का ते तपासा.";
+
+            }
+
+        }
+    );
+
+
+// ========================================
+// SHOW DASHBOARD
+// ========================================
+
+function showDashboard() {
+
+    document
+        .getElementById("loginPage")
+        .style.display = "none";
+
+
+    document
+        .getElementById("dashboardPage")
+        .style.display = "block";
+
+}
+
+
+// ========================================
+// LOAD DASHBOARD
+// ========================================
+
+async function loadDashboard() {
+
+    const token =
+        localStorage.getItem("adminToken");
+
+
+    if (!token) {
+
+        logout();
+
+        return;
+
+    }
+
+
+    try {
+
+        const response =
+            await fetch(
+                `${API_URL}/api/admin/dashboard`,
+                {
+
+                    headers: {
+
+                        "Authorization":
+                            `Bearer ${token}`
+
+                    }
+
+                }
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if (!response.ok || !data.success) {
+
+            alert(
+                data.message ||
+                "Dashboard load failed"
+            );
+
+            logout();
+
+            return;
+
+        }
+
+
+        // Stats
+
+        document
+            .getElementById("totalAmount")
+            .textContent =
+            "₹" +
+            Number(
+                data.summary.total_amount
+            ).toLocaleString("en-IN");
+
+
+        document
+            .getElementById("successCount")
+            .textContent =
+            data.summary.success_count;
+
+
+        document
+            .getElementById("pendingCount")
+            .textContent =
+            data.summary.pending_count;
+
+
+        document
+            .getElementById("failedCount")
+            .textContent =
+            data.summary.failed_count;
+
+
+        // Transactions
+
+        window.allTransactions =
+            data.transactions || [];
+
+
+        renderTransactions(
+            window.allTransactions
+        );
+
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert(
+            "Dashboard server शी connect होत नाही."
+        );
+
+    }
+
+}
+
+
+// ========================================
+// RENDER TRANSACTIONS
+// ========================================
+
+function renderTransactions(
+    transactions
+) {
+
+    const body =
+        document.getElementById(
+            "transactionBody"
+        );
+
+
+    if (!transactions.length) {
+
+        body.innerHTML = `
+
+            <tr>
+
+                <td
+                    colspan="6"
+                    class="empty">
+
+                    अजून कोणतेही transactions नाहीत.
+
+                </td>
+
+            </tr>
+
+        `;
+
+        return;
+
+    }
+
+
+    body.innerHTML =
+        transactions
+            .map(function(item) {
+
+
+                let statusClass =
+                    "pending";
+
+
+                if (
+                    item.payment_status ===
+                    "SUCCESS"
+                ) {
+
+                    statusClass =
+                        "success";
+
+                }
+
+
+                if (
+                    item.payment_status ===
+                    "FAILED"
+                ) {
+
+                    statusClass =
+                        "failed";
+
+                }
+
+
+                const paymentId =
+                    item.razorpay_payment_id ||
+                    "-";
+
+
+                const date =
+                    item.payment_date
+                    ? new Date(
+                        item.payment_date
+                    ).toLocaleString(
+                        "en-IN"
+                    )
+                    : new Date(
+                        item.created_at
+                    ).toLocaleString(
+                        "en-IN"
+                    );
+
+
+                return `
+
+                    <tr>
+
+                        <td>
+                            ${escapeHtml(
+                                item.donor_name
+                            )}
+                        </td>
+
+                        <td>
+                            ${escapeHtml(
+                                item.mobile
+                            )}
+                        </td>
+
+                        <td>
+                            ₹${Number(
+                                item.amount
+                            ).toLocaleString(
+                                "en-IN"
+                            )}
+                        </td>
+
+                        <td>
+                            ${escapeHtml(
+                                paymentId
+                            )}
+                        </td>
+
+                        <td>
+
+                            <span
+                                class="status ${statusClass}">
+
+                                ${item.payment_status}
+
+                            </span>
+
+                        </td>
+
+                        <td>
+                            ${date}
+                        </td>
+
+                        <td>
+    <button
+        class="delete-btn"
+        onclick="deleteDonation(${item.id})">
+        Delete
+    </button>
+</td>
+
+                    </tr>
+
+                `;
+
+            })
+            .join("");
+
+}
+
+
+// ========================================
+// SEARCH
+// ========================================
+
+document
+    .getElementById("searchBox")
+    .addEventListener(
+        "input",
+        function() {
+
+            const search =
+                this.value
+                    .toLowerCase()
+                    .trim();
+
+
+            const filtered =
+                (window.allTransactions || [])
+                    .filter(function(item) {
+
+                        return (
+
+                            String(
+                                item.donor_name
+                            )
+                            .toLowerCase()
+                            .includes(search)
+
+                            ||
+
+                            String(
+                                item.mobile
+                            )
+                            .toLowerCase()
+                            .includes(search)
+
+                        );
+
+                    });
+
+
+            renderTransactions(
+                filtered
+            );
+
+        }
+    );
+
+
+// ========================================
+// HTML ESCAPE
+// ========================================
+
+function escapeHtml(value) {
+
+    return String(value ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+
+}
+
+// ========================================
+// DELETE DONATION
+// ========================================
+
+async function deleteDonation(id) {
+
+    const confirmDelete = confirm(
+        "ही donation record कायमची delete करायची आहे का?"
+    );
+
+    if (!confirmDelete) {
+        return;
+    }
+
+    const token =
+        localStorage.getItem("adminToken");
+
+    if (!token) {
+
+        alert("Admin login आवश्यक आहे.");
+
+        logout();
+
+        return;
+    }
+
+    try {
+
+        const response =
+            await fetch(
+                `${API_URL}/api/admin/donation/${id}`,
+                {
+                    method: "DELETE",
+
+                    headers: {
+                        "Authorization":
+                            `Bearer ${token}`
+                    }
+                }
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if (!response.ok || !data.success) {
+
+            alert(
+                data.message ||
+                "Donation delete करता आली नाही."
+            );
+
+            return;
+        }
+
+
+        alert(
+            "Donation successfully deleted."
+        );
+
+
+        // Dashboard पुन्हा load
+        loadDashboard();
+
+
+    } catch (error) {
+
+        console.error(
+            "Delete Error:",
+            error
+        );
+
+        alert(
+            "Server शी connection होत नाही."
+        );
+
+    }
+
+}
+
+// ========================================
+// LOGOUT
+// ========================================
+
+function logout() {
+
+    localStorage.removeItem(
+        "adminToken"
+    );
+
+
+    document
+        .getElementById("dashboardPage")
+        .style.display = "none";
+
+
+    document
+        .getElementById("loginPage")
+        .style.display = "flex";
+
+}
+
+
+// ========================================
+// AUTO LOGIN
+// ========================================
+
+if (
+    localStorage.getItem(
+        "adminToken"
+    )
+) {
+
+    showDashboard();
+
+    loadDashboard();
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
